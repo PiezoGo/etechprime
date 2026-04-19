@@ -5,8 +5,9 @@ nixPkgs = ["python311", "nodejs_20"]
 cmds = [
     # Install Node dependencies
     "cd frontend && npm install",
-    # Install Python dependencies globally within the container
-    "pip install -r backend/requirements.txt"
+    # Create Python venv and install dependencies
+    "python -m venv /opt/venv",
+    ". /opt/venv/bin/activate && pip install -r backend/requirements.txt"
 ]
 
 [phases.build]
@@ -14,10 +15,10 @@ cmds = [
     # Build React Frontend
     "cd frontend && npm run build",
     # Collect static files for Django
-    "cd backend && python manage.py collectstatic --noinput",
+    ". /opt/venv/bin/activate && cd backend && python manage.py collectstatic --noinput",
     # Run database migrations
-    "cd backend && python manage.py migrate --noinput"
+    ". /opt/venv/bin/activate && cd backend && python manage.py migrate --noinput"
 ]
 
 [start]
-cmd = "cd backend && gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT"
+cmd = ". /opt/venv/bin/activate && cd backend && gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT"
