@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    background-color: #F8F5F0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: #111111;
+    color: #F8F5F0;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-[11px] tracking-widest2 uppercase text-ink-muted hover:text-ink transition-colors duration-300 font-medium;
+  }
+
+  .section-label {
+    @apply text-[10px] tracking-widest3 uppercase text-ink-faint font-medium;
+  }
+
+  .masonry-grid {
+    column-count: 2;
+    column-gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .masonry-grid {
+      column-count: 3;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .masonry-grid {
+      column-count: 4;
+    }
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .img-hover {
+    @apply overflow-hidden;
+  }
+
+  .img-hover img {
+    @apply transition-transform duration-700 ease-in-out;
+  }
+
+  .img-hover:hover img {
+    @apply scale-105;
+  }
+
+  .btn-outline {
+    @apply inline-block border border-ink text-ink text-[11px] tracking-widest2 uppercase px-8 py-3 hover:bg-ink hover:text-cream transition-all duration-300;
+  }
+
+  .form-input {
+    @apply w-full bg-transparent border-b border-ink-faint py-3 text-sm text-ink placeholder-ink-muted focus:outline-none focus:border-ink transition-colors duration-300;
+  }
+}
+
+/* Loader */
+.page-enter {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #BBBBBB;
+  border-radius: 2px;
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(248, 245, 240, 0.97);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
