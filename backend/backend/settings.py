@@ -105,6 +105,9 @@ STATICFILES_DIRS = [
     BASE_DIR.parent / 'frontend' / 'dist',   # React build folder
 ]
 
+# Serve Vite root assets like /favicon.svg and /assets/...
+WHITENOISE_ROOT = BASE_DIR.parent / 'frontend' / 'dist'
+
 # Whitenoise configuration for production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
