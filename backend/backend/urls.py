@@ -6,6 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('portfolio.urls')),
 
-    # Serve the React frontend for everything else (except api and admin)
+
+    # Serve React frontend for all other routes (SPA fallback)
     re_path(r'^(?!api/|admin/).*$', TemplateView.as_view(template_name='index.html')),
 ]
