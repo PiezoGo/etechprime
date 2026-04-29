@@ -6,8 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('portfolio.urls')),
 
-    # Serve static assets properly - WhiteNoise should handle these
-    # React SPA fallback - ONLY for normal pages, NOT for assets
-    re_path(r'^(?!api/|admin/|assets/|static/|images/|favicon).*', 
+    # Serve React app for everything except API, admin, and assets
+    re_path(r'^(?!api/|admin/|assets/|static/|images/).*$', 
             TemplateView.as_view(template_name='index.html')),
 ]
