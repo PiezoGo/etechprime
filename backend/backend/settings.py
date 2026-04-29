@@ -113,3 +113,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.parent / 'media'
+
+# Force WhiteNoise to recognize .js files correctly
+WHITENOISE_MIMETYPES = {
+    '.js': 'application/javascript',
+    '.mjs': 'application/javascript',
+}
