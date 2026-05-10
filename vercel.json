@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "backend/backend/wsgi.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "excludeFiles": "{frontend/**,images/**,vercel_dist/**,.git/**}"
+      }
     },
     {
       "src": "build.sh",

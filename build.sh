@@ -14,6 +14,8 @@ python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install -r requirements.txt
 python3 manage.py collectstatic --noinput --clear
+deactivate
+rm -rf .venv
 cd ..
 
 echo "Moving static files out of backend to prevent Lambda size limits..."
