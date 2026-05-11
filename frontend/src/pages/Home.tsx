@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 import { type GalleryImage, fetchGallery } from '../api'
 import PageTransition from '../components/PageTransition'
 
-const HERO_IMAGE = '/static/etech studioz-63.jpg'
+const HERO_IMAGE = '/static/ETECH STUDIOZ 0742132778-2.jpg'
 const FEATURED_IMAGES = [
-  '/static/etech studioz-47.jpg',
-  '/static/etech studioz-91.jpg',
-  '/static/etech studioz-39.jpg',
-  '/static/etech studioz-100.jpg',
-  '/static/etech studioz-172.jpg',
-  '/static/etech studioz-201.jpg',
+  '/static/ETECH STUDIOZ 0742132778-4.jpg',
+  '/static/ETECH STUDIOZ 0742132778-7.jpg',
+  '/static/ETECH STUDIOZ 0742132778-11.jpg',
+  '/static/ETECH STUDIOZ 0742132778-17.jpg',
+  '/static/ETECH STUDIOZ 0742132778-19.jpg',
+  '/static/ETECH STUDIOZ 0742132778-22.jpg',
 ]
 
 export default function Home() {

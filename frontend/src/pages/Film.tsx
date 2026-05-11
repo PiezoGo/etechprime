@@ -4,10 +4,10 @@ import { type GalleryImage, fetchGallery } from '../api'
 import PageTransition from '../components/PageTransition'
 
 const FILM_IMAGES = [
-  '/static/etech studioz-47.jpg',
-  '/static/etech studioz-91.jpg',
-  '/static/etech studioz-63.jpg',
-  '/static/etech studioz-39.jpg',
+  '/static/ETECH STUDIOZ 0742132778-26.jpg',
+  '/static/ETECH STUDIOZ 0742132778-27.jpg',
+  '/static/ETECH STUDIOZ 0742132778-29.jpg',
+  '/static/ETECH STUDIOZ 0742132778-33.jpg',
 ]
 
 const filmProjects = [

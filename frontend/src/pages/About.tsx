@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageTransition from '../components/PageTransition'
 
-const BIO_IMAGE = '/static/me.jpg'
+const BIO_IMAGE = '/static/ETECH STUDIOZ 0742132778-63.jpg'
 
 export default function About() {
   return (
